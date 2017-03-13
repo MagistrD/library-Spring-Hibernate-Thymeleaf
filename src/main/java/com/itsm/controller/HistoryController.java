@@ -13,6 +13,8 @@ import java.util.List;
 
 @Controller(value = "histories")
 public class HistoryController {
+
+    @Autowired
     private HistoryService historyService;
 
     @Autowired

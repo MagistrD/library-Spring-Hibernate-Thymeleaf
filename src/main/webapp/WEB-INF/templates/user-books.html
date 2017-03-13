@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Books</title>
+    <link rel="stylesheet" th:href="@{../../css/bootstrap.css}"/>
+</head>
+<body>
+
+<div>
+    <ul class="nav nav-tabs">
+        <li><a href="/users">All users</a></li>
+        <li><a href="/books">All books</a></li>
+        <li><a href="/registration">Registration</a></li>
+    </ul>
+</div>
+
+<h1>Books</h1>
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>History</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book:${userBooks}">
+        <td th:text="${book.getId()}">ID</td>
+        <td th:text="${book.getTitle()}">Name</td>
+        <td th:text="${book.getAuthor()}">Surname</td>
+        <td><a href="book-history.html" th:href="@{|/book-history/${book.getId()}|}">History</a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -17,7 +17,7 @@ public class HistoryDaoImpl implements HistoryDao {
 
     @Transactional(readOnly = true)
     public List<History> findAll() {
-        Query query = sessionFactory.getCurrentSession().createQuery("FROM History ");
+        Query query = sessionFactory.getCurrentSession().createQuery("from History ");
         return query.list();
     }
 
@@ -31,7 +31,7 @@ public class HistoryDaoImpl implements HistoryDao {
     @Transactional(readOnly = true)
     public History insert(History history) {
 
-        Query query = sessionFactory.getCurrentSession().createQuery("insert into History(dateOfIssue))");
+//        Query query = sessionFactory.getCurrentSession().createQuery("insert into History(dateOfIssue)");
 
         sessionFactory.getCurrentSession().saveOrUpdate(history);
         return history;

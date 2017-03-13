@@ -1,6 +1,8 @@
 package com.itsm.entity;
 
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -47,7 +49,7 @@ public class History {
     }
 
     @ManyToOne
-    @JoinColumn(name = "BOOKS_book_id")
+    @JoinColumn(name = "books_id")
     public Book getBook() {
         return this.book;
     }
@@ -55,5 +57,7 @@ public class History {
     public void setBook(Book book) {
         this.book = book;
     }
+
+
 
 }

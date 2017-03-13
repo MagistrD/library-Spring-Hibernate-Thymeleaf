@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
     <title>History</title>
-    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css" th:href="@{../../css/bootstrap.css}"/>
+    <link rel="stylesheet" th:href="@{../../css/bootstrap.css}"/>
 </head>
 <body>
 
@@ -12,17 +11,17 @@
 <table class="table table-hover">
     <thead>
     <tr>
-        <th th:text="">ID</th>
-        <th th:text="">Issue date</th>
-        <th th:text="">Return Date</th>
+        <th>ID</th>
+        <th>Issue date</th>
+        <th>Return Date</th>
     </tr>
     </thead>
     <tbody>
-    <!--<tr th:each="his : ${bookHistory}">-->
-        <!--<td>${his.}</td>-->
-        <!--<td></td>-->
-        <!--<td></td>-->
-    <!--</tr>-->
+    <tr th:each="history : ${bookHistory}">
+        <td th:text="${history.getId()}">ID</td>
+        <td th:text="${{history.getDateOfIssue()}}">Issue date</td>
+        <td th:text="${{history.getDateOfReturn()}}">Return date</td>
+    </tr>
     </tbody>
 </table>
 
