@@ -1,7 +1,8 @@
-package com.itsm.service;
+package com.itsm.service.impl;
 
 import com.itsm.dao.BookDao;
 import com.itsm.entity.Book;
+import com.itsm.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,7 +21,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Transactional
-    public List<Book> findAll() {
+    public List<Book> findAllBooks() {
         return this.bookDao.findAll();
     }
 
@@ -42,5 +43,10 @@ public class BookServiceImpl implements BookService {
     @Transactional
     public void delete(Book book) {
         this.bookDao.delete(book);
+    }
+
+    @Transactional
+    public List<Book> findAllBookInHands() {
+        return this.bookDao.findAllBooksInHands();
     }
 }

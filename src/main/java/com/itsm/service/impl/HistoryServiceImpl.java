@@ -1,7 +1,8 @@
-package com.itsm.service;
+package com.itsm.service.impl;
 
 import com.itsm.dao.HistoryDao;
 import com.itsm.entity.History;
+import com.itsm.service.HistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,11 +16,6 @@ public class HistoryServiceImpl implements HistoryService {
 
     public void setHistoryDao(HistoryDao historyDao) {
         this.historyDao = historyDao;
-    }
-
-    @Transactional
-    public List findAll() {
-        return this.historyDao.findAll();
     }
 
     @Transactional

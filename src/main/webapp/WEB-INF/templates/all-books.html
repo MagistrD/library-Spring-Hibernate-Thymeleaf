@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Books</title>
+    <title>Books in hands</title>
     <link rel="stylesheet" th:href="@{../../css/bootstrap.css}"/>
 </head>
 <body>
@@ -14,7 +14,7 @@
     </ul>
 </div>
 
-<h1>Books</h1>
+<h1>Books in hands:</h1>
 
 <table class="table table-striped">
     <thead>
@@ -22,15 +22,13 @@
         <th>ID</th>
         <th>Title</th>
         <th>Author</th>
-        <th>History</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="book:${userBooks}">
-        <td th:text="${book.getId()}">ID</td>
-        <td th:text="${book.getTitle()}">Name</td>
-        <td th:text="${book.getAuthor()}">Surname</td>
-        <td><a href="book-history.html" th:href="@{|/book-history/${book.getId()}|}">History</a></td>
+    <tr th:each="book:${allBooks}">
+        <td th:text="${book.getId()}"></td>
+        <td th:text="${book.getTitle()}"></td>
+        <td th:text="${book.getAuthor()}"></td>
     </tr>
     </tbody>
 </table>

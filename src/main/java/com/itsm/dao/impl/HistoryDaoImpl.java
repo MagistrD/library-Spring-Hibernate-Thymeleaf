@@ -1,5 +1,6 @@
-package com.itsm.dao;
+package com.itsm.dao.impl;
 
+import com.itsm.dao.HistoryDao;
 import com.itsm.entity.History;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
@@ -15,12 +16,6 @@ import java.util.List;
 public class HistoryDaoImpl implements HistoryDao {
     private SessionFactory sessionFactory;
 
-    @Transactional(readOnly = true)
-    public List<History> findAll() {
-        Query query = sessionFactory.getCurrentSession().createQuery("from History ");
-        return query.list();
-    }
-
     @Transactional
     public List findByBookId(int id) {
         Query query = sessionFactory.getCurrentSession().createQuery("from History where book.id =:id");
@@ -30,9 +25,7 @@ public class HistoryDaoImpl implements HistoryDao {
 
     @Transactional(readOnly = true)
     public History insert(History history) {
-
-//        Query query = sessionFactory.getCurrentSession().createQuery("insert into History(dateOfIssue)");
-
+//        Query query = sessionFactory.getCurrentSession().createQuery("insert into History");
         sessionFactory.getCurrentSession().saveOrUpdate(history);
         return history;
     }

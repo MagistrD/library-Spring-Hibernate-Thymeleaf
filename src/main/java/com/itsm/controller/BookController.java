@@ -21,11 +21,18 @@ public class BookController {
         this.bookService = bookService;
     }
 
-    @RequestMapping(value = "/books", method = RequestMethod.GET)
+    @RequestMapping(value = "/allBooks", method = RequestMethod.GET)
     public String allBooksList(Model model) {
-        List<Book> books = bookService.findAll();
-        model.addAttribute("books", books);
-        return "all_books";
+        List<Book> books = bookService.findAllBooks();
+        model.addAttribute("allBooks", books);
+        return "all-books";
+    }
+
+    @RequestMapping(value = "allBooksInHands", method = RequestMethod.GET)
+    public String allBooksInHands(Model model) {
+        List<Book> books = bookService.findAllBookInHands();
+        model.addAttribute("booksInHands", books);
+        return "books_in_hands";
     }
 
     @RequestMapping(value = "/user-books/{id}", method = RequestMethod.GET)
@@ -34,4 +41,16 @@ public class BookController {
         model.addAttribute("userBooks", books);
         return "user-books";
     }
+
+    @RequestMapping(value = "show-add-book", method = RequestMethod.GET)
+    public String showAddBook() {
+        return "add-book";
+    }
+
+//    @RequestMapping(value = "give-book", method = RequestMethod.POST)
+//    public String giveBook(int bookId, int userId) {
+//        Book book = bookService.findById(bookId);
+//        book.setUser();
+//    }
+
 }

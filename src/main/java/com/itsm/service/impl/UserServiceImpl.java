@@ -1,7 +1,8 @@
-package com.itsm.service;
+package com.itsm.service.impl;
 
 import com.itsm.dao.UserDao;
 import com.itsm.entity.User;
+import com.itsm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

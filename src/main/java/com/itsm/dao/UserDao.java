@@ -5,15 +5,15 @@ import com.itsm.entity.User;
 import java.util.List;
 
 public interface UserDao {
-    List<User> findAll();
+    List findAll();
 
     List<User> findReaders();
 
     User findById(int id);
 
-    User insert(User user);
+    void insert(User user);
 
-    void delete(User user);
+    void delete(int id);
 
     User findByUserName(String username);
 }

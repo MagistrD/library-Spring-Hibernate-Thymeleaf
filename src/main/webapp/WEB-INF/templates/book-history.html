@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1 th:text="">History</h1>
+<h1>History</h1>
 
 <table class="table table-hover">
     <thead>
@@ -18,9 +18,9 @@
     </thead>
     <tbody>
     <tr th:each="history : ${bookHistory}">
-        <td th:text="${history.getId()}">ID</td>
-        <td th:text="${{history.getDateOfIssue()}}">Issue date</td>
-        <td th:text="${{history.getDateOfReturn()}}">Return date</td>
+        <td th:text="${history.getId()}"></td>
+        <td th:text="${history.getDateOfIssue()}"></td>
+        <td th:text="${history.getDateOfReturn()}"></td>
     </tr>
     </tbody>
 </table>

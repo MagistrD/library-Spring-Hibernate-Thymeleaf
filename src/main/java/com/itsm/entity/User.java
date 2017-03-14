@@ -13,7 +13,6 @@ public class User {
     private String surname;
     private String username;
     private String password;
-//    transient private String confirmPassword;
 
     private Set<Role> roleSet = new HashSet<Role>();
 
@@ -86,15 +85,6 @@ public class User {
         this.bookSet = bookSet;
     }
 
-//    @Transient
-//    public String getConfirmPassword() {
-//        return confirmPassword;
-//    }
-
-//    public void setConfirmPassword(String confirmPassword) {
-//        this.confirmPassword = confirmPassword;
-//    }
-//
     @ManyToMany
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "users_id"),
             inverseJoinColumns = @JoinColumn(name = "roles_id"))
@@ -104,15 +94,6 @@ public class User {
 
     public void setRoleSet(Set<Role> roleSet) {
         this.roleSet = roleSet;
-    }
-
-    public void addBook(Book book) {
-        book.setUser(this);
-        getBookSet().add(book);
-    }
-
-    public void removeBook(Book book) {
-        getBookSet().remove(book);
     }
 
     @Override

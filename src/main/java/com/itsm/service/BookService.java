@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface BookService {
 
-    List<Book> findAll();
+    List<Book> findAllBooks();
 
     Book findById(int id);
 
@@ -15,4 +15,8 @@ public interface BookService {
     Book insert(Book book);
 
     void delete(Book book);
+
+    List<Book> findAllBookInHands();
+
+
 }

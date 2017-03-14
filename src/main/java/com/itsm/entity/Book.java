@@ -4,9 +4,6 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@NamedQueries({
-        @NamedQuery(name = "findByUserId", query = "select b from Book b where b.user =:id")
-})
 @Entity
 @Table(name = "books")
 public class Book {
@@ -15,6 +12,7 @@ public class Book {
     private String author;
     private User user;
     private Set<History> historySet = new HashSet<History>();
+//    public static final int BOOK_IN_LIBRARY = 1;
 
     public Book() {
     }
@@ -70,15 +68,6 @@ public class Book {
 
     public void setHistorySet(Set<History> historySet) {
         this.historySet = historySet;
-    }
-
-    public void addHistory(History history) {
-        history.setBook(this);
-        getHistorySet().add(history);
-    }
-
-    public void removeHistory(History history) {
-        getHistorySet().remove(history);
     }
 
     @Override

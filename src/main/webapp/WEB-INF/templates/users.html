@@ -10,7 +10,7 @@
     <ul class="nav nav-tabs">
         <li><a href="/users">All users</a></li>
         <li><a href="/books">All books</a></li>
-        <li><a href="/registration">Registration</a></li>
+        <li><a href="/showReg">Registration</a></li>
     </ul>
 </div>
 
@@ -28,10 +28,10 @@
     </thead>
     <tbody>
     <tr th:each="user:${users}">
-        <td th:text="${user.getId()}">ID</td>
-        <td th:text="${user.getName()}">Name</td>
-        <td th:text="${user.getSurname()}">Surname</td>
-        <td th:text="${user.getUsername()}">Username</td>
+        <td th:text="${user.getId()}"></td>
+        <td th:text="${user.getName()}"></td>
+        <td th:text="${user.getSurname()}"></td>
+        <td th:text="${user.getUsername()}"></td>
         <td><a href="user-books.html" th:href="@{|/user-books/${user.getId()}|}">Books</a></td>
     </tr>
     </tbody>

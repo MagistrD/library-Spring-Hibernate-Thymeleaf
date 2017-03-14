@@ -9,10 +9,14 @@ public interface BookDao {
 
     Book findById(int id);
 
-    List findByUserId(int id);
+    List<Book> findByUserId(int id);
+
+    List<Book> findAllBooksInHands();
 
     Book insert(Book book);
 
     void delete(Book book);
+
+    void update(Book book);
 
 }
